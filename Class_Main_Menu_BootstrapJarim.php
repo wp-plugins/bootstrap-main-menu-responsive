@@ -319,7 +319,7 @@ public function load_bootstrap_menus() {
 
     }
 
-    if ($menu_search_option_bmmj)
+    if ($menu_search_option_bmmj=="1")
     {
         echo '<li>'.get_search_form().'</li>';
     }   
@@ -327,15 +327,15 @@ public function load_bootstrap_menus() {
     echo '</ul>';
 
 
-    if ($menu_register_option_bmmj || $menu_login_option_bmmj)
+    if ($menu_register_option_bmmj=="1" || $menu_login_option_bmmj=="1")
     {
 
         echo '<ul class="nav navbar-nav navbar-right">';
-        if ($menu_register_option_bmmj)
+        if ($menu_register_option_bmmj=="1")
         {
             echo ' <li><a href="'.$register_url_bootstrap.'"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
         }
-        if ( $menu_login_option_bmmj)
+        if ( $menu_login_option_bmmj=="1")
         {
             echo '<li><a href="'.$login_url_bootstrap.'"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
         }            
