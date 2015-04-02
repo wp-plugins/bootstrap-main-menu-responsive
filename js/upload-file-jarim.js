@@ -19,14 +19,15 @@ file_frame = wp.media.frames.file_frame = wp.media(
 
 
 /*ADD UPLOAD BUTTONS HANDLER*/
-$( "body" ).on( "click", "#upload-file-logo-jarim,#upload-file-header-image-jarim,#upload-file-middle-image-jarim,#upload-file-footer-logo-jarim,#upload-file-footer-image-jarim", function(event)
+$( "body" ).on( "click", "#upload-file-logo-jarim", function(event)
 {
+    event.preventDefault();
     /*SET THIS.ID WITH LOCAL STORAGE FOR LATER SET INPUT VALUES IN OPTIONS*/
     var buttonID = $(this).attr('id');
     //alert(buttonID);
     localStorage["logobmmj.imagenowjarim"] = buttonID;
         
-    event.preventDefault();
+    
 
     // If the media frame already exists, reopen it.
     if ( file_frame ) {
@@ -53,7 +54,7 @@ file_frame.on( 'select', function()
     
     if (buttonID =="upload-file-logo-jarim" )
     {//
-        //alert("nowwwwww");
+        //alert(url);
         $('#logo_option_bmmj').val(url);
         $('#upload_preview_logo img').attr('src',url);     
     }

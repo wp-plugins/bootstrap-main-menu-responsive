@@ -308,7 +308,7 @@ public function settings_menu_link_beside_plugin_name_in_plugins()
 	
                 </table>
                 <p class="submit">
-                    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+                    <input type="submit" class="" value="<?php _e('Save Changes') ?>" />
                 </p>
             </form>
         </div>
