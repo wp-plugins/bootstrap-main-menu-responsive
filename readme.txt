@@ -3,7 +3,7 @@ Contributors: jarim
 Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse
 Requires at least: ?
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2
 bootstrap-main-menu-responsive: is your perfect menu for both computers and mobiles. You can Choose between fixed at top, fixed at bottom, normal, inverse, etc.
 
