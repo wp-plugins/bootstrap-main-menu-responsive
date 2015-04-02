@@ -1,6 +1,6 @@
 === bootstrap main menu responsive ===
 Contributors: jarim
-Tags: bootstrap,bootstrap menu,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse
+Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse
 Requires at least: ?
 Tested up to: 4.1
 Stable tag: 1.0
@@ -19,7 +19,8 @@ Current features include:
 
 * Menu responsive to mobile and computer.
 * Bootstrap technology.
-* In admin panel you can set visible or invisible your actual header, search, register and login :)
+* Allow submenus (only 1 level)
+* In admin panel you can set visible or invisible your actual logo, header, search-bar, register and login :)
 * Menu options: fixed at top, fixed at bottom, normal, dark menu, etc.
 * Easy uninstall not harming your wordpress installation in anyway.
 

@@ -13,8 +13,14 @@ class Class_Install_BootstrapJarim
         'menu_login_option_bmmj' => 1,
         'menu_search_option_bmmj' => 1,        
         'menu_sitename_option_bmmj' => 1,
-        'menu_header_visible_option_bmmj' => 0
-        
+        'menu_header_visible_option_bmmj' => 0,
+        'logo_option_bmmj' => '',
+        'logo_show_option_bmmj' => 1,        
+        'logo_height_option_bmmj' => '',
+        'logo_width_option_bmmj' => ''
+                     
+                    
+                           
     );
 
     public function __construct() 
@@ -64,8 +70,14 @@ class Class_Install_BootstrapJarim
             $this->data['menu_login_option_bmmj'] = $options['menu_login_option_bmmj'] ;  
             $this->data['menu_search_option_bmmj'] = $options['menu_search_option_bmmj'] ; 
             $this->data['menu_sitename_option_bmmj'] = $options['menu_sitename_option_bmmj'] ;            
-            $this->data['menu_header_visible_option_bmmj'] = $options['menu_header_visible_option_bmmj'] ;            
-
+            $this->data['menu_header_visible_option_bmmj'] = $options['menu_header_visible_option_bmmj'] ;       
+            $this->data['logo_option_bmmj'] = $options['logo_option_bmmj'] ;  
+            $this->data['logo_show_option_bmmj'] = $options['logo_show_option_bmmj'] ;            
+            $this->data['logo_height_option_bmmj'] = $options['logo_height_option_bmmj'] ;       
+            $this->data['logo_width_option_bmmj'] = $options['logo_width_option_bmmj'] ; 
+                    
+                    
+                    
         }
         else
         {
@@ -94,6 +106,8 @@ class Class_Install_BootstrapJarim
 //        define( 'BMMJ_SITE_NAME', $this->data['menu_sitename_option_bmmj'] ); 
 //        if ( !defined('BMMJ_HEADER') )
 //        define( 'BMMJ_HEADER', $this->data['menu_header_visible_option_bmmj'] );  
+//        if ( !defined('BMMJ_LOGO') )
+//        define( 'BMMJ_LOGO', $this->data['logo_option_bmmj'] ); 
         
         //OTHER CONSTANTS  
         //DEAFULT NAVIGATION
@@ -223,12 +237,46 @@ public function settings_menu_link_beside_plugin_name_in_plugins()
                     </tr>	
 
                     
+   
+                    <tr valign="top"><th scope="row">Logo upload</th>
+                        <td>
+                            <!--BUTTON FOR UPLOAD-->
+                            <button  id="upload-file-logo-jarim">Upload Logo</button>
+                            <br><br>
+                            <!--PREVIEW FOR UPLOAD-->
+                            <div id="upload_preview_logo" style="max-height:200px;">
+                                <img style="max-width:200px;" src="<?php echo esc_url( $options['logo_option_bmmj'] ); ?>" />
+                            </div>                            
+                        </td>  
+                    </tr>                    
+                    
+ 
+                    <tr valign="top"><th scope="row">Logo url:</th>
+                        <td>
+                            <!--INPUT FOR UPLOAD-SAVING -->
+                            <input type="text" id="logo_option_bmmj" name="<?php echo $this->option_name; ?>[logo_option_bmmj]" value="<?php echo $options['logo_option_bmmj']; ?>" />
+                        </td>
+                    </tr>	                          
+                    
+                    
+                    <tr valign="top"><th scope="row">(optional) Logo width: input only numbers</th>
+                        <td><input type="text" name="<?php echo $this->option_name; ?>[logo_width_option_bmmj]" value="<?php echo $options['logo_width_option_bmmj']; ?>" /></td>
+                    </tr>                    
+                    <tr valign="top"><th scope="row">(optional) Logo height: input only numbers</th>
+                        <td><input type="text" name="<?php echo $this->option_name; ?>[logo_height_option_bmmj]" value="<?php echo $options['logo_height_option_bmmj']; ?>" /></td>
+                    </tr> 
+
                     
                     <tr valign="top">
                         <td>
                             <h3>Check to show</h3>
                         </td>
                     </tr>	
+                    <tr valign="top"><th scope="row">Show Logo</th>
+                        <td>
+                            <input type='checkbox' name="<?php echo $this->option_name; ?>[logo_show_option_bmmj]" value='1'  <?php if ( 1 == $options['logo_show_option_bmmj'] ) echo 'checked="checked"'; ?> />
+                        </td>
+                    </tr>
                     <tr valign="top"><th scope="row">Show Login</th>
                         <td>
                             <input type='checkbox' name="<?php echo $this->option_name; ?>[menu_login_option_bmmj]" value='1'  <?php if ( 1 == $options['menu_login_option_bmmj'] ) echo 'checked="checked"'; ?> />
@@ -280,7 +328,13 @@ public function settings_menu_link_beside_plugin_name_in_plugins()
         $valid['menu_search_option_bmmj'] = sanitize_text_field($input['menu_search_option_bmmj']);
         $valid['menu_sitename_option_bmmj'] = sanitize_text_field($input['menu_sitename_option_bmmj']);		
         $valid['menu_header_visible_option_bmmj'] = sanitize_text_field($input['menu_header_visible_option_bmmj']);  
-
+        $valid['logo_option_bmmj'] = sanitize_text_field($input['logo_option_bmmj']); 
+        $valid['logo_show_option_bmmj'] = sanitize_text_field($input['logo_show_option_bmmj']);		
+        $valid['logo_height_option_bmmj'] = sanitize_text_field($input['logo_height_option_bmmj']);  
+        $valid['logo_width_option_bmmj'] = sanitize_text_field($input['logo_width_option_bmmj']);         
+                    
+                    
+                    
 
         if (strlen($valid['menu_appareance_option_bmmj']) == "") 
         {
@@ -301,8 +355,14 @@ public function settings_menu_link_beside_plugin_name_in_plugins()
         $this->data['menu_login_option_bmmj'] = $valid['menu_login_option_bmmj'] ; 
         $this->data['menu_search_option_bmmj'] = $valid['menu_search_option_bmmj'] ; 
         $this->data['menu_sitename_option_bmmj'] = $valid['menu_sitename_option_bmmj'] ; 
-        $this->data['menu_header_visible_option_bmmj'] = $valid['menu_header_visible_option_bmmj'] ;         
-        
+        $this->data['menu_header_visible_option_bmmj'] = $valid['menu_header_visible_option_bmmj'] ;  
+        $this->data['logo_option_bmmj'] = $valid['logo_option_bmmj'] ; 
+        $this->data['logo_show_option_bmmj'] = $valid['logo_show_option_bmmj'] ; 
+        $this->data['logo_height_option_bmmj'] = $valid['logo_height_option_bmmj'] ;  
+        $this->data['logo_width_option_bmmj'] = $valid['logo_width_option_bmmj'] ; 
+                     
+                    
+                           
 
         //initialize all constants to options
         //$this->initializeConstants();

@@ -36,4 +36,35 @@ new Class_Install_BootstrapJarim();
 require MY_PLUGIN_DIR_BOOTSTRAP_MENU_JARIM . 'Class_Main_Menu_BootstrapJarim.php';
 new Class_Main_Menu_BootstrapJarim();
 
+function checkIsYourPageOptions($pageOptionsName) 
+{
+/*CALL
+$pageOptionsName = "foodpushers-front-appareance-list-options";
+if (checkIsYourPageOptions($stringExist))
+{
+*/
+    $Path=$_SERVER['REQUEST_URI'];
+    //echo "/ Path= $Path";
+    $stringExist =  stripos($Path,$pageOptionsName);    
+    return $stringExist;
+}
 
+function load_home_appareance_jQuery() 
+{ // load external file  
+
+    $pageOptionsName = "bootstrap_main_menu_list_option";
+    if (checkIsYourPageOptions($pageOptionsName))
+    {
+        //IN wp_enqueue_media IS ALL THE NECCESARY TO MAKE WORKS OUR FILE UPLOAD SCRIPT
+        wp_enqueue_media();        
+        //wp_enqueue_script('jquery');
+        //OUR FILE UPLOAD SCRIPT
+        wp_register_script('upload-file-jarim', MY_PLUGIN_URL_BOOTSTRAP_MENU_JARIM.'js/upload-file-jarim.js', array('jquery') );
+        wp_enqueue_script('upload-file-jarim');
+
+    }
+}  
+
+
+
+add_action('admin_init', 'load_home_appareance_jQuery');

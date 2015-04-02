@@ -158,7 +158,23 @@ public function load_bootstrap_menus() {
     $menu_register_option_bmmj = $options['menu_register_option_bmmj'] ; 
     $menu_login_option_bmmj = $options['menu_login_option_bmmj'] ;  
     $menu_search_option_bmmj = $options['menu_search_option_bmmj'] ; 
-    $menu_sitename_option_bmmj = $options['menu_sitename_option_bmmj'] ;      
+    $menu_sitename_option_bmmj = $options['menu_sitename_option_bmmj'] ;     
+    $logo_option_bmmj = esc_url($options['logo_option_bmmj']);
+    $logo_width_option_bmmj = $options['logo_width_option_bmmj']; 
+    $logo_height_option_bmmj = $options['logo_height_option_bmmj']; 
+    $logo_show_option_bmmj= $options['logo_show_option_bmmj'];
+    
+    if ($logo_width_option_bmmj)
+    {
+        $logo_width_option_bmmj ="width:".$logo_width_option_bmmj."px;";
+            
+    }
+    if ($logo_height_option_bmmj)
+    {
+        $logo_height_option_bmmj ="height:".$logo_height_option_bmmj."px;";
+            
+    }
+
     //$menu_header_visible_option_bmmj =$options['menu_header_visible_option_bmmj'];
     
 
@@ -177,6 +193,17 @@ public function load_bootstrap_menus() {
         <span class="icon-bar"></span>                        
       </button>
      <!--ORIGINAL <a class="navbar-brand" href="#">WebSiteName</a>-->';
+    
+    if ($logo_option_bmmj && $logo_show_option_bmmj==1)
+    {
+        echo '<a class=""  style="float:left;padding:10px;" href="'.$home_url_bootstrap.'" title="'.$blog_info_bootstrap.' '.$blog_description_bootstrap.'" rel="home">
+        '."<img style='$logo_width_option_bmmj $logo_height_option_bmmj' src='$logo_option_bmmj' >".'
+        </a>';
+    }
+   
+    
+   
+
     if ($menu_sitename_option_bmmj)
     {
         echo '<a class="navbar-brand"  style="text-transform:uppercase;" href="'.$home_url_bootstrap.'" title="'.$blog_info_bootstrap.' '.$blog_description_bootstrap.'" rel="home">
