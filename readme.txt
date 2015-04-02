@@ -1,6 +1,6 @@
 === bootstrap main menu responsive ===
 Contributors: jarim
-Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse
+Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse,menu
 Requires at least: ?
 Tested up to: 4.1
 Stable tag: 1.1
