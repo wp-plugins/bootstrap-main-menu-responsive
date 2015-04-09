@@ -176,7 +176,14 @@ public function load_bootstrap_menus() {
     }
 
     //$menu_header_visible_option_bmmj =$options['menu_header_visible_option_bmmj'];
-    
+	
+	
+     if([$menu_appareance_option_bmmj=="navbar navbar-default navbar-fixed-top"|| $menu_appareance_option_bmmj=="navbar navbar-inverse navbar-fixed-top"] && is_user_logged_in())
+    {//IF USSER LOGGED IN SET TOP-MARGIN TO SEE THE MENU ADMIN 
+         
+         echo '<style>
+             .navbar-fixed-top{margin-top:30px !important;}</style> ';        
+    }   
 
     echo '
 
@@ -378,7 +385,8 @@ public function load_bootstrap_menus() {
 
     if($menu_appareance_option_bmmj=="navbar navbar-default navbar-fixed-top"|| $menu_appareance_option_bmmj=="navbar navbar-inverse navbar-fixed-top")
     {//FILL THE SPACE OF THE MENU INSERTING A FILL DIV
-         echo '<div id="fill-menu" style="clear:both;width:100%;height:110px;" ></div> ';        
+         
+         echo '<div id="fill-bootstrap-menu-jarim" style="clear:both;width:100%;height:18px;background-color:#101010;" ></div> ';        
     }
 
 
