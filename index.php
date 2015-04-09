@@ -4,7 +4,7 @@ Plugin Name: bootstrap-main-menu-responsive
 Plugin URI: http://www.jarimos.dk/websjarim/bootstrap-main-menu-responsive/
 Description: Main menu bootstrap responsive + collapse. You can Choose between fixed at top, fixed at bottom, normal, inverse, etc. 
 Author: Jarim
-Version: 1.0
+Version: 1.3
 Author URI: http://www.jarimos.dk
 License: GPLv2
 */
