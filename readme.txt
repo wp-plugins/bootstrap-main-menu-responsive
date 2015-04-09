@@ -1,11 +1,12 @@
 === bootstrap main menu responsive ===
 Contributors: jarim
+Donate link: http://www.sos-childrensvillages.org/
 Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse,menu
 Requires at least: ?
 Tested up to: 4.1
 Stable tag: 1.3
 License: GPLv2
-bootstrap-main-menu-responsive: is your perfect menu for both computers and mobiles. You can Choose between fixed at top, fixed at bottom, normal, inverse, etc.
+bootstrap-main-menu-responsive: is your perfect menu for both computers and mobiles. Many options in admin panel.
 
 
 == Description ==
@@ -94,7 +95,23 @@ Find the word "wp_nav_menu" inside YOUR-THEME-FOLDER/header.php file and delete-
 
 == Changelog ==
 
+= 1.3 =
+* 2015-04-09
+* Release stable and updated version 1.3 to the public.
+* Go on holiday, have a few beers, and watch the girls do the hoolahoop().
+
 = 1.0 =
-* 2014-11-28
+* 2015-04-01
 * Release stable and updated version 1.0 to the public.
 * Go on holiday, have a few beers, and watch the girls do the hoolahoop().
+
+== Upgrade Notice ==
+
+= 1.3 =
+This version us better.  Recommended Upgrade :).
+
+= 1.2 =
+This version us better.  Recommended Upgrade :).
+
+= 1.1 =
+This version us better.  Recommended Upgrade :).
