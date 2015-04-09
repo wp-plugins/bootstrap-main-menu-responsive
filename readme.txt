@@ -13,7 +13,8 @@ bootstrap-main-menu-responsive: is your perfect menu for both computers and mobi
 
 bootstrap-main-menu-responsive: is your perfect bootstrap menu for both computers and mobiles. You can Choose between fixed at top, fixed at bottom, normal, inverse, etc.
 
-<a href="http://www.jarimos.dk/websjarim/bootstrap-main-menu-responsive" >For live example click here!!!</a>
+<a href="http://www.jarimos.dk/websjarim/bootstrap-main-menu-responsive" >For live example click here!!!</a><br><br>
+<a href="http://www.sos-childrensvillages.org/" >Donate and help children her!!!</a><br><br>
 
 
 Current features include:
