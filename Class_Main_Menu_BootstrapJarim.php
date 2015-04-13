@@ -108,9 +108,9 @@ public function menu_get_by_name_if_not_exist_get_primary ()
     $menu_name_option_bmmj = $options['menu_name_option_bmmj'];  
 
     //GET MENU OBJECT BY MENU NAME (COULD BE slug OR id) 
-     $menu_name = $menu_name_option_bmmj;
-     $menu = wp_get_nav_menu_object($menu_name );
-     //echo '<pre>MY ARRRAY'; print_r($menu); echo '<pre/>';    
+    $menu_name = $menu_name_option_bmmj;
+    $menu = wp_get_nav_menu_object($menu_name );
+    //echo '<pre>MY ARRRAY'; print_r($menu); echo '<pre/>';    
 
     //IF NO MENU NAME
     if($menu_name=="")
@@ -123,6 +123,15 @@ public function menu_get_by_name_if_not_exist_get_primary ()
         $menu = wp_get_nav_menu_object( $menu_id  ); 
     }
     
+    if (!$menu)
+    {
+       $all_menus = wp_get_nav_menus();
+        //echo '<pre>MY ARRRAY'; print_r($menu); echo '<pre/>';
+       foreach( $all_menus as $menu )
+       {
+            return $menu;
+       }
+    }
     return $menu;
 
 }
@@ -176,14 +185,7 @@ public function load_bootstrap_menus() {
     }
 
     //$menu_header_visible_option_bmmj =$options['menu_header_visible_option_bmmj'];
-	
-	
-     if([$menu_appareance_option_bmmj=="navbar navbar-default navbar-fixed-top"|| $menu_appareance_option_bmmj=="navbar navbar-inverse navbar-fixed-top"] && is_user_logged_in())
-    {//IF USSER LOGGED IN SET TOP-MARGIN TO SEE THE MENU ADMIN 
-         
-         echo '<style>
-             .navbar-fixed-top{margin-top:30px !important;}</style> ';        
-    }   
+    
 
     echo '
 
@@ -385,8 +387,7 @@ public function load_bootstrap_menus() {
 
     if($menu_appareance_option_bmmj=="navbar navbar-default navbar-fixed-top"|| $menu_appareance_option_bmmj=="navbar navbar-inverse navbar-fixed-top")
     {//FILL THE SPACE OF THE MENU INSERTING A FILL DIV
-         
-         echo '<div id="fill-bootstrap-menu-jarim" style="clear:both;width:100%;height:18px;background-color:#101010;" ></div> ';        
+         echo '<div id="fill-menu" style="visibility:none;clear:both;width:100%;height:18px;" ></div> ';        
     }
 
 
