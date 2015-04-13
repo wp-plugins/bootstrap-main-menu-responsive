@@ -4,7 +4,7 @@ Donate link: http://www.sos-childrensvillages.org/
 Tags: bootstrap,menu bootstrap,menu responsive,main menu,bootstrap main menu,menu collapse,collapse,menu
 Requires at least: ?
 Tested up to: 4.1
-Stable tag: 1.4
+Stable tag: 1.3
 License: GPLv2
 bootstrap-main-menu-responsive: is your perfect menu for both computers and mobiles. Many options in admin panel.
 
